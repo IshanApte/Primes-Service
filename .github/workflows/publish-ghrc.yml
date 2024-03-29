@@ -20,9 +20,9 @@ jobs:
         run: mvn clean package
 
       - name: Login to GitHub Container Registry
-        run: echo ${{ secrets.SARTHAK_LATEST }} | docker login ghcr.io --username Sarthak1904 --password-stdin
+        run: echo ${{ secrets.ACCESS.TOKEN }} | docker login ghcr.io --username ishanapte --password-stdin
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ghcr.io/sarthak1904/primes-service:latest .
-          docker push ghcr.io/sarthak1904/primes-service:latest
+          docker build -t ghcr.io/ishanapte/primes-service:latest .
+          docker push ghcr.io/ishanapte/primes-service:latest
